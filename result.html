@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            background:linear-gradient(to right,#bdb79a,#0f2027);
+        }
+        .container { max-width: 500px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        .result { padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-top: 20px; }
+        .malicious { background-color: #ffdddd; }
+        .benign { background-color: #ddffdd; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Malicious URL Detection</h2>
+        <div class="result {% if prediction == 'malicious' %}malicious{% else %}benign{% endif %}">
+            <p>The URL <strong>{{ url }}</strong> is <strong>{{ prediction }}</strong>.</p>
+        </div>
+        <a href="/">Check another URL</a>
+    </div>
+</body>
+</html>
